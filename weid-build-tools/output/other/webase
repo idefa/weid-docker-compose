@@ -1,7 +1,0 @@
-{
-  "weBaseHost" : "172.25.0.6:5001",
-  "appKey" : "JgR7MjW9",
-  "appSecret" : "rLmLfWFakSCvHce7cjr2BB64QH76Y2mh",
-  "weIdHost" : "127.0.0.1:6021",
-  "useWebase" : true
-}

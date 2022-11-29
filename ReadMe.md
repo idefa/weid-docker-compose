@@ -22,7 +22,7 @@ webase由于有依赖，如果没启动,重复执行 docker-compose up -d到全�
 
 ## 3.查看
 
-* Webase链管理工具 http://localhost:5000/ 账号 admin/Simmed1234
+* Webase链管理工具 http://localhost:5000/
 * Weidentity管理工具 http://localhost:6021/
 * WeId Sample:http://localhost:6101/swagger-ui.html
 
