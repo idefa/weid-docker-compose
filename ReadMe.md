@@ -27,8 +27,9 @@ webase由于有依赖，如果没启动,重复执行 docker-compose up -d到全�
 ## 4. 配置Weidentity
 * Weidentity管理工具 http://localhost:6021/
 #### 创建Weidentity数据库
-连接mysql,创建Weidentity的数据库，mysql连接是 127.0.0.1:23306  账号: root/123456 
+连接mysql,创建Weidentity的数据库，mysql连接是 127.0.0.1:23306  账号: root/123456, 容器内地址是：172.25.0.9:3306
 #### Weidentity可视化安装
+配置注意填写容器内的IP地址，请查看docker-compose
 https://weidentity.readthedocs.io/zh_CN/release-1.8.5/docs/deploy-via-web.html
 
 
