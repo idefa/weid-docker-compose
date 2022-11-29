@@ -8,7 +8,8 @@ rm -rf ./fisco/nodes/172.25.0.4/node0/log
 rm -rf ./weid-build-tools/logs
 rm -rf ./weid-build-tools/output
 rm -rf ./weid-sample/logs
-rm -rf ./weid-sample/keys/priv
+rm -rf ./weid-sample/keys/priv/ecdsa_key
+rm -rf ./weid-sample/keys/priv/ecdsa_key.pub
 rm -rf ./webase/webase-front
 rm -rf ./webase/webase-node-mgr
 rm -rf ./webase/webase-sign

@@ -28,16 +28,17 @@ webase由于有依赖，如果没启动,重复执行 docker-compose up -d到全�
 * Weidentity管理工具 http://localhost:6021/
 #### 创建Weidentity数据库
 连接mysql,创建Weidentity的数据库，mysql连接是 127.0.0.1:23306  账号: root/123456, 容器内地址是：172.25.0.9:3306
-#### Weidentity可视化安装
+#### [Weidentity可视化安装](https://weidentity.readthedocs.io/zh_CN/release-1.8.5/docs/deploy-via-web.html)
 配置注意填写容器内的IP地址，请查看docker-compose
-https://weidentity.readthedocs.io/zh_CN/release-1.8.5/docs/deploy-via-web.html
+
 
 
 
 ## 5. 访问Weid 示例
 
 * WeId Sample:http://localhost:6101/swagger-ui.html
-
+拷贝 weid-build-tools 的resources中的文件到 weid-sample
+拷贝 output/admin下的文件到 weid-sample/keys/priv
 ## 其他：重置所有数据,重新初始化Webase,WeIdentiy
 ```bash
 ./reset.sh
