@@ -37,10 +37,9 @@ webase由于有依赖，如果没启动,重复执行 docker-compose up -d到全�
 ## 5. 访问Weid 示例
 拷贝 weid-build-tools 的resources中的文件到 weid-sample
 拷贝 output/admin下的文件到 weid-sample/keys/priv
-重启 weid-sample
+
 ```bash
-docker restart weid-sample
-webase由于有依赖，如果没启动,重复执行 docker-compose up -d到全部启动为止
+docker restart weid-sample # 重启 weid-sample
 ```
 * WeId Sample:http://localhost:6101/swagger-ui.html
 ## 其他：重置所有数据,重新初始化Webase,WeIdentiy
