@@ -1,5 +1,10 @@
 
 # Weidentity 一站式体验流程
+版本说明：
+* Fisco bcos版本 2.9.0
+* Webase  1.5.4
+* weid-build-tools  1.0.28
+* weid-sample master
 
 ## 1.创建网络
 ```bash
