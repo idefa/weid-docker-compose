@@ -1,0 +1,19 @@
+version : '3'
+services:
+  chain-node1:
+    image: fiscoorg/fiscobcos:v2.9.0
+    container_name: chain-node1
+    working_dir: /data
+    command: -c  config.ini
+    volumes:
+      - ./node0:/data
+    ports:
+      - 30301:30300
+      - 8546:8545
+      - 20201:20200
+    networks:
+      web_network:
+        ipv4_address: 172.25.0.3
+networks:
+  web_network:
+    external: true

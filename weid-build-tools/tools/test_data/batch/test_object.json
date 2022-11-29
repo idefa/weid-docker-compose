@@ -1,0 +1,46 @@
+{
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "the WeID of the owner"
+		},
+		"name": {
+			"type": "string",
+			"description": "the name of object"
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "code"
+				},
+				"context": {
+					"type": "string",
+					"description": "error"
+				},
+				"date": {
+					"type": "string",
+					"description": "info"
+				}
+			}
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "info"
+				},
+				"address": {
+					"type": "string",
+					"description": "sipTellAddress"
+				},
+				"userlevel": {
+					"type": "integer",
+					"description": "userlevel"
+				}
+			}
+		}
+	}
+}

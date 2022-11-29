@@ -1,0 +1,203 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+def gradleVer = "4"
+if (gradle.gradleVersion.startsWith("6")
+        || gradle.gradleVersion.startsWith("5")
+        || gradle.gradleVersion.startsWith("4.10")
+        || gradle.gradleVersion.startsWith("4.9")
+        || gradle.gradleVersion.startsWith("4.8")
+        || gradle.gradleVersion.startsWith("4.7")) {
+    println "Gradle with version >= 4.7 detected"
+    gradleVer = "5"
+} else {
+    println "Gradle with version < 4.7 detected"
+}
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+if (!gradle.startParameter.isOffline()) {
+    apply plugin: 'checkstyle'
+    apply plugin: 'jacoco'
+    apply plugin: 'signing'
+}
+
+version = "1.0.11"
+def repo ="${repoType}"
+//设置jdk的版本
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	if (!gradle.startParameter.isOffline()) {
+         mavenLocal()
+        if ("cn" == repo) {
+            println "use cn repo"
+            maven {url "http://maven.aliyun.com/nexus/content/groups/public/"}
+        } else {
+            println "use default repo"
+            mavenCentral()
+        }
+    	maven { url "https://dl.bintray.com/ethereum/maven/" }
+	maven { url "https://oss.sonatype.org/content/groups/public/" }
+    } else {
+        maven {
+            url 'dependencies'
+        }
+    }
+}
+
+def spring_version = "5.3.2"
+def log4j_version = "2.15.0";
+def slf4j_version = "1.7.30";
+def jackson_version = "2.11.0";
+def mysql_version = "8.0.20";
+def swagger_version = "2.9.2";
+
+List swagger = [
+        "io.springfox:springfox-swagger2:$swagger_version",
+        "io.springfox:springfox-swagger-ui:$swagger_version"
+]
+
+List apache_commons = [
+        "org.apache.logging.log4j:log4j-api:$log4j_version",
+        "org.apache.logging.log4j:log4j-web:$log4j_version",
+        "org.apache.logging.log4j:log4j-core:$log4j_version",
+        "org.apache.logging.log4j:log4j-jcl:$log4j_version",
+        "org.apache.logging.log4j:log4j-slf4j-impl:$log4j_version",
+        "org.slf4j:jul-to-slf4j:$slf4j_version",
+        "org.slf4j:slf4j-api:$slf4j_version"
+]
+
+List json = [
+        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_version",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version",
+        "com.fasterxml.jackson.module:jackson-module-parameter-names:$jackson_version",
+        "com.fasterxml.jackson.core:jackson-databind:$jackson_version",
+        "com.fasterxml.jackson.core:jackson-annotations:$jackson_version",
+        "com.fasterxml.jackson.core:jackson-core:$jackson_version",
+        "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jackson_version"
+]
+
+List mysql_driver = [
+        "mysql:mysql-connector-java:$mysql_version"
+]
+
+List spring = [
+        "org.springframework:spring-core:$spring_version",
+        "org.springframework:spring-beans:$spring_version",
+        "org.springframework:spring-context:$spring_version",
+        "org.springframework:spring-tx:$spring_version",
+        "org.springframework:spring-jdbc:$spring_version",
+        "org.springframework:spring-test:$spring_version",
+        "org.springframework:spring-context-support:$spring_version",
+        "org.springframework:spring-web:$spring_version",
+        "org.springframework:spring-webmvc:$spring_version",
+        "org.springframework:spring-expression:$spring_version",
+        "org.springframework:spring-aop:$spring_version"
+]
+
+List other = [
+        "javassist:javassist:3.12.1.GA"
+]
+
+List protobuf = [
+        "com.google.protobuf:protobuf-java:3.9.1"
+]
+
+configurations {
+    localDeps
+}
+
+//添加编译时的依赖
+dependencies {
+    localDeps 'org.projectlombok:lombok:1.18.12'
+    // Check SDK pipeline dependency
+    if (file("./dependencies/weid-java-sdk-pipeline.jar").exists()) {
+        println "Pipeline jar for WeIdentity Java SDK found."
+        compile files('./dependencies/weid-java-sdk-pipeline.jar')
+    } else {
+        println "No pipeline jar found for WeIdentity Java SDK, using gradle version.."
+        compile("com.webank:weid-java-sdk:1.8.3") {
+            exclude group:"org.slf4j", module: "slf4j-log4j12"
+        }
+    }
+    if (gradleVer.startsWith("4")) {
+        if (gradle.startParameter.isOffline()) {
+            compile fileTree(dir: 'dist/lib', include: '*.jar')
+        } else {
+            compile("org.springframework.boot:spring-boot-starter-web"){
+				exclude group:"ch.qos.logback"
+				exclude group:"org.apache.logging.log4j"
+			}
+            compile fileTree(dir:'libs', include:'*.jar')
+            compile apache_commons, swagger, json, mysql_driver, spring, other, protobuf
+        }
+    }
+    if (gradleVer.startsWith("5")) {
+        if (!gradle.startParameter.isOffline()) {
+            compileOnly 'org.projectlombok:lombok:1.18.12'
+            annotationProcessor 'org.projectlombok:lombok:1.18.12'
+            compile("org.springframework.boot:spring-boot-starter-web"){
+				exclude group:"ch.qos.logback"
+				exclude group:"org.apache.logging.log4j"
+			}
+            compile fileTree(dir:'libs', include:'*.jar')
+            compile apache_commons, swagger, json, mysql_driver, spring, other, protobuf
+        } else {
+            compileOnly files('dist/lib/lombok-1.18.12.jar')
+            annotationProcessor files('dist/lib/lombok-1.18.12.jar')
+            compile fileTree(dir: 'dist/lib', include: '*.jar')
+        }
+    }
+}
+
+//生成的jar包包名和版本
+jar {
+    enabled = true
+    baseName = 'weIdentity-sample'
+    destinationDir file('dist/app')
+    archiveName baseName+ '-' + version + '.jar'
+	exclude '/*.*'
+	
+    doLast {
+        copy {
+            from configurations.compile
+            into 'dist/lib'
+        }
+        mkdir 'dist/logs'
+    }
+}
+
+
+clean {
+    delete("dist")
+}
+
+eclipse {
+    classpath {
+        downloadSources = false
+    }
+}
+
+checkstyle {
+    ignoreFailures false
+    showViolations true
+    toolVersion '8.12'
+    configProperties.projectDir = project.projectDir
+    checkstyleMain.configFile = new File(project.projectDir, '/config/checkstyle/webank_google_checks.xml')
+}
+
+tasks.withType(Checkstyle) {
+    include '**/*.java'
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}

@@ -1,0 +1,65 @@
+2022-11-29 09:55:35.525 [main] INFO  ConnectionManager() -  all connections, size: 1, list: [ConnectionInfo{host='172.25.0.2', port=20200}]
+2022-11-29 09:55:35.618 [main] INFO  ConnectionManager() -  build ECDSA ssl context with configured certificates 
+2022-11-29 09:55:36.195 [nioEventLoopGroup-2-1] INFO  ChannelHandler() -  handshake success, host: 172.25.0.2, port: 20200, ctx: 728888535
+2022-11-29 09:55:36.319 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  node: ClientVersion{version='2.9.0', supportedVersion='2.9.0', chainId='1', buildTime='20220516 06:12:02', buildType='Linux/clang/Release', gitBranch='HEAD', gitCommitHash='b8a2362911462ccc3a19862bdd418b4f486f5601'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20220516 06:12:02","Build Type":"Linux/clang/Release","Chain Id":"1","FISCO-BCOS Version":"2.9.0","Git Branch":"HEAD","Git Commit Hash":"b8a2362911462ccc3a19862bdd418b4f486f5601","Supported Version":"2.9.0"}}
+
+2022-11-29 09:55:36.320 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  support channel handshake node
+2022-11-29 09:55:36.327 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  channel protocol handshake success, set socket channel protocol, host: 172.25.0.2:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.9.0, EnumProtocol=VERSION_3]
+2022-11-29 09:55:36.353 [main] INFO  ChannelImp() -  Connect to  nodes: 172.25.0.2:20200, java version: 1.8.0_312 ,java vendor: Private Build
+2022-11-29 09:55:36.356 [main] INFO  BcosSDK() - create BcosSDK, start channel success, cryptoType: 0
+2022-11-29 09:55:36.361 [main] INFO  BcosSDK() - create BcosSDK, start channel succ, channelProcessorThreadSize: 50, receiptProcessorThreadSize: 50
+2022-11-29 09:55:36.383 [main] INFO  GroupManagerServiceImpl() - registerBlockNumberNotifyHandler
+2022-11-29 09:55:36.385 [main] INFO  GroupManagerServiceImpl() - registerTransactionNotifyHandler
+2022-11-29 09:55:36.411 [main] INFO  BcosSDK() - create BcosSDK, create groupManagerService success
+2022-11-29 09:55:38.219 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:38.555 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.707 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.714 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.732 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.744 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.763 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.768 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.776 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.780 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.963 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:39.966 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.041 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.045 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.089 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.092 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.111 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.114 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.121 [main] INFO  AmopImp() - update subscribe inform 1 peers
+2022-11-29 09:55:40.131 [main] INFO  AmopImp() - amop module started
+2022-11-29 09:55:40.132 [main] INFO  AmopImp() - update subscribe inform 1 peers
+2022-11-29 09:55:40.135 [main] INFO  BcosSDK() - create BcosSDK, create Amop success
+2022-11-29 09:55:40.629 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.633 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.657 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.661 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.680 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:40.682 [main] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.779 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.781 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.824 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.827 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.854 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.857 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.860 [pool-11-thread-1] INFO  CryptoSuite() - init CryptoSuite, cryptoType: 0
+2022-11-29 09:55:56.888 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.893 [pool-11-thread-1] WARN  KeyTool() - get method for EC5Util failed, method name: convertSpec
+2022-11-29 09:55:56.898 [pool-11-thread-1] INFO  Client() - build client success for group 1
+2022-11-29 09:55:56.907 [pool-11-thread-1] INFO  BcosSDK() - create client for group 1 success
+2022-11-29 11:24:32.542 [nioEventLoopGroup-2-1] INFO  ChannelHandler() -  ssl close completion event, host: 172.25.0.2, port: 20200, ctx: 728888535 
+2022-11-29 11:24:32.554 [GroupManagerServiceImpl] INFO  AmopImp() - update subscribe inform 0 peers
+2022-11-29 11:24:40.062 [pool-4-thread-1] ERROR ResponseCallback() - Processing message timeout:{}
+2022-11-29 11:24:40.063 [pool-11-thread-1] ERROR JsonRpcService() - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+2022-11-29 11:24:40.064 [pool-11-thread-1] WARN  GroupManagerServiceImpl() - fetchGroupList from 172.25.0.2:20200 failed, error info: get response failed, errorCode:102, error message:Processing message timeout
+2022-11-29 11:24:42.065 [pool-4-thread-1] ERROR ResponseCallback() - Processing message timeout:{}
+2022-11-29 11:24:42.067 [http-nio-5002-exec-7] ERROR JsonRpcService() - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+2022-11-29 11:24:42.067 [http-nio-5002-exec-7] WARN  GroupManagerServiceImpl() - fetchGroupList from 172.25.0.2:20200 failed, error info: get response failed, errorCode:102, error message:Processing message timeout
+2022-11-29 11:24:42.562 [pool-4-thread-1] ERROR ResponseCallback() - Processing message timeout:{}
+2022-11-29 11:24:42.562 [pool-9-thread-1] ERROR JsonRpcService() - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+2022-11-29 11:24:42.562 [pool-9-thread-1] WARN  GroupManagerServiceImpl() - fetchGroupList from 172.25.0.2:20200 failed, error info: get response failed, errorCode:102, error message:Processing message timeout
+2022-11-29 11:25:02.280 [pool-6-thread-1] ERROR ConnectionManager() - connect to 172.25.0.2:20200 failed. connection timed out: /172.25.0.2:20200
+2022-11-29 11:25:02.281 [pool-6-thread-1] ERROR ConnectionManager() -  reconnect to 172.25.0.2:20200, error: [{"code":2, "msg":"connect to 172.25.0.2:20200 failed"}]

@@ -1,0 +1,51 @@
+2022-11-29 09:56:23.729 [main] INFO  Application() - Starting Application on 4ad63f786907 with PID 25 (/dist/apps/WeBASE-Sign.jar started by root in /dist)
+2022-11-29 09:56:23.773 [main] INFO  Application() - The following profiles are active: docker
+2022-11-29 09:56:25.236 [main] INFO  AnnotationConfigEmbeddedWebApplicationContext() - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@642a7222: startup date [Tue Nov 29 09:56:25 CST 2022]; root of context hierarchy
+2022-11-29 09:56:27.773 [background-preinit] INFO  Version() - HV000001: Hibernate Validator 5.3.6.Final
+2022-11-29 09:56:48.814 [main] INFO  TomcatEmbeddedServletContainer() - Tomcat initialized with port(s): 5004 (http)
+2022-11-29 09:56:49.792 [localhost-startStop-1] INFO  ContextLoader() - Root WebApplicationContext: initialization completed in 24599 ms
+2022-11-29 09:56:50.369 [localhost-startStop-1] INFO  ServletRegistrationBean() - Mapping servlet: 'dispatcherServlet' to [/]
+2022-11-29 09:56:50.384 [localhost-startStop-1] INFO  FilterRegistrationBean() - Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-11-29 09:56:50.384 [localhost-startStop-1] INFO  FilterRegistrationBean() - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-11-29 09:56:50.384 [localhost-startStop-1] INFO  FilterRegistrationBean() - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-11-29 09:56:50.384 [localhost-startStop-1] INFO  FilterRegistrationBean() - Mapping filter: 'requestContextFilter' to: [/*]
+2022-11-29 09:56:59.715 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/sign],methods=[POST]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.SignController.signStandard(com.webank.webase.sign.pojo.vo.ReqEncodeInfoVo,org.springframework.validation.BindingResult) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.726 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/version],methods=[GET]}" onto public java.lang.String com.webank.webase.sign.api.controller.VersionController.getServerVersion()
+2022-11-29 09:56:59.778 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/{signUserId}/userInfo],methods=[GET]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.getUserInfo(java.lang.String,boolean) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.788 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/all],methods=[DELETE]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.deleteAllUserCache()
+2022-11-29 09:56:59.794 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/newUser],methods=[GET]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.newUser(java.lang.String,java.lang.String,java.lang.Integer,boolean) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.798 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/newUser],methods=[POST]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.newUserByImportPrivateKey(com.webank.webase.sign.pojo.vo.ReqNewUserVo,org.springframework.validation.BindingResult) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.898 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/list/{appId}/{pageNumber}/{pageSize}],methods=[GET]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.getUserListByAppId(java.lang.String,java.lang.Integer,java.lang.Integer,boolean) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.905 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user],methods=[DELETE]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.deleteUser(com.webank.webase.sign.pojo.vo.ReqUserInfoVo) throws com.webank.webase.sign.exception.BaseException
+2022-11-29 09:56:59.906 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/user/all-credential],methods=[DELETE]}" onto public com.webank.webase.sign.pojo.vo.BaseRspVo com.webank.webase.sign.api.controller.UserController.deleteCredentialCache()
+2022-11-29 09:57:00.014 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2022-11-29 09:57:00.027 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2022-11-29 09:57:00.031 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2022-11-29 09:57:00.138 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-11-29 09:57:00.146 [main] INFO  RequestMappingHandlerMapping() - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-11-29 09:57:01.749 [main] INFO  PropertySourcedRequestMappingHandlerMapping() - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-11-29 09:57:02.393 [main] INFO  RequestMappingHandlerAdapter() - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@642a7222: startup date [Tue Nov 29 09:56:25 CST 2022]; root of context hierarchy
+2022-11-29 09:57:02.842 [main] INFO  SimpleUrlHandlerMapping() - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-11-29 09:57:02.842 [main] INFO  SimpleUrlHandlerMapping() - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-11-29 09:57:02.912 [main] INFO  ExceptionHandlerExceptionResolver() - Detected @ExceptionHandler methods in exceptionsHandler
+2022-11-29 09:57:03.003 [main] INFO  SimpleUrlHandlerMapping() - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-11-29 09:57:05.146 [main] INFO  AnnotationMBeanExporter() - Registering beans for JMX exposure on startup
+2022-11-29 09:57:05.162 [main] INFO  DefaultLifecycleProcessor() - Starting beans in phase 2147483647
+2022-11-29 09:57:05.162 [main] INFO  DocumentationPluginsBootstrapper() - Context refreshed
+2022-11-29 09:57:05.196 [main] INFO  DocumentationPluginsBootstrapper() - Found 1 custom documentation plugin(s)
+2022-11-29 09:57:05.270 [main] INFO  ApiListingReferenceScanner() - Scanning for api listing references
+2022-11-29 09:57:05.776 [main] INFO  ScheduledAnnotationBeanPostProcessor() - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-11-29 09:57:05.964 [main] INFO  TomcatEmbeddedServletContainer() - Tomcat started on port(s): 5004 (http)
+2022-11-29 09:57:05.974 [main] INFO  Application() - Started Application in 53.899 seconds (JVM running for 60.637)
+2022-11-29 09:57:05.974 [main] INFO  Application() - main run success...
+2022-11-29 09:58:52.355 [http-nio-5004-exec-1] INFO  DispatcherServlet() - FrameworkServlet 'dispatcherServlet': initialization started
+2022-11-29 09:58:52.470 [http-nio-5004-exec-1] INFO  DispatcherServlet() - FrameworkServlet 'dispatcherServlet': initialization completed in 115 ms
+2022-11-29 10:04:30.170 [http-nio-5004-exec-3] INFO  UserService() - start addUser signUserId:14bee9083f114edd883b8a3750b2f1c7,appId:1,encryptType:0
+2022-11-29 10:04:34.765 [http-nio-5004-exec-3] INFO  AesUtils() - getDefaultAesCipherPattern aes cipher pattern: AES/CBC/PKCS5Padding
+2022-11-29 10:04:34.983 [http-nio-5004-exec-3] INFO  UserService() - end addUser
+2022-11-29 10:04:38.998 [http-nio-5004-exec-4] INFO  UserService() - start addUser signUserId:544ff3bc74a74c7eb64ae57dec2461c5,appId:1,encryptType:0
+2022-11-29 10:04:39.018 [http-nio-5004-exec-4] INFO  UserService() - end addUser
+2022-11-29 10:04:48.048 [http-nio-5004-exec-5] INFO  UserService() - start findBySignUserId. signUserId:544ff3bc74a74c7eb64ae57dec2461c5
+2022-11-29 10:04:48.071 [http-nio-5004-exec-5] INFO  AesUtils() - getDefaultAesCipherPattern aes cipher pattern: AES/CBC/PKCS5Padding
+2022-11-29 10:04:48.072 [http-nio-5004-exec-5] INFO  UserService() - end findBySignUserId. userId:544ff3bc74a74c7eb64ae57dec2461c5
+2022-11-29 10:04:48.077 [http-nio-5004-exec-5] INFO  AesUtils() - getDefaultAesCipherPattern aes cipher pattern: AES/CBC/PKCS5Padding

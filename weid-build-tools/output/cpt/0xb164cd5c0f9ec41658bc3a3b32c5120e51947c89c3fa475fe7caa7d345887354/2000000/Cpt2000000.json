@@ -1,0 +1,23 @@
+{
+  "cptType" : "original",
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "description" : "this is cpt",
+  "title" : "cpt",
+  "type" : "object",
+  "properties" : {
+    "age" : {
+      "description" : "the age of certificate owner",
+      "type" : "number"
+    },
+    "gender" : {
+      "description" : "the gender of certificate owner",
+      "enum" : [ "F", "M" ],
+      "type" : "string"
+    },
+    "name" : {
+      "description" : "the name of certificate owner",
+      "type" : "string"
+    }
+  },
+  "required" : [ "name", "age" ]
+}
