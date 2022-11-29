@@ -16,3 +16,4 @@ rm -rf ./webase/webase-web
 rm -rf ./webase/mysql
 cd ./webase
 unzip mysql.zip
+rm -rf __MACOSX
