@@ -70,7 +70,8 @@ public class WeBaseService {
         Map<String, Object> request = new HashMap<String, Object>();
         request.put("appIp", registerInfo.getWeIdHost().split(":")[0]);
         request.put("appPort", registerInfo.getWeIdHost().split(":")[1]);
-        request.put("appLink", "http://" + registerInfo.getWeIdHost());
+        request.put("appLink", registerInfo.getWeIdHost());
+        log.info("[registerService] appLink: {},", registerInfo.getWeIdHost());
         try {
             BaseResponse<Object> res = restTemplate.postForObject(requestUrl, request, BaseResponse.class);
             log.info("[registerService] code: {}, msg: {}", res.getCode(), res.getMessage());

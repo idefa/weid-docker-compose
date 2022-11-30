@@ -42,6 +42,9 @@
                   <el-form-item label="appSecret:" prop="org_id">
                     <el-input v-model="dataForm.appSecret" placeholder="Enter appSecret" maxlength="30"  style="width: 72%"></el-input>
                   </el-form-item>
+                  <el-form-item label="weIdUrl:" prop="org_id">
+                    <el-input v-model="dataForm.weIdHost" placeholder="Enter IP:PORT" maxlength="30"  style="width: 72%"></el-input>
+                  </el-form-item>
                 </div>
               </el-form>
               <div class="card-footer bt-part" id="role-next">
@@ -117,7 +120,7 @@ export default {
       formData.weBaseHost = this.dataForm.address
       formData.appKey = this.dataForm.appKey
       formData.appSecret = this.dataForm.appSecret
-      formData.weIdHost = window.location.host
+      formData.weIdHost = this.dataForm.weIdHost
       if (formData.weBaseHost === '') {
         this.$alert('请输入WeBASE服务地址!', '温馨提示', {}).catch(() => {})
         return

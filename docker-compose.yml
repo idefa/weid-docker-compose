@@ -152,7 +152,7 @@ services:
         ipv4_address: 172.25.0.9
 
   weid-build-tools:
-      image:  openjdk:8u181-jdk
+      image:  xinyikeji/java:8
       restart: always
       container_name: weid-build-tools
       privileged: true
@@ -175,7 +175,7 @@ services:
             max-size: "2m"
 
   weid-sample:
-      image:  openjdk:8u181-jdk
+      image:  xinyikeji/java:8
       restart: always
       container_name: weid-sample
       privileged: true

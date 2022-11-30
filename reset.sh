@@ -5,9 +5,7 @@ rm -rf ./fisco/nodes/172.25.0.3/node0/data
 rm -rf ./fisco/nodes/172.25.0.3/node0/log
 rm -rf ./fisco/nodes/172.25.0.4/node0/data
 rm -rf ./fisco/nodes/172.25.0.4/node0/log
-rm -rf ./weid-build-tools/logs
 rm -rf ./weid-build-tools/output
-rm -rf ./weid-sample/logs
 rm -rf ./weid-sample/keys/priv/ecdsa_key
 rm -rf ./weid-sample/keys/priv/ecdsa_key.pub
 rm -rf ./webase/webase-front
